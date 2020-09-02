@@ -1,0 +1,28 @@
+.custom-rim-drop-down {
+  border-radius: 22.5px;
+  margin-left: 10px;
+  border: none;
+  padding: 10px;
+  width: 115px;
+  background: #ffebeb;
+}
+
+.bolt-pattern {
+  border-radius: 22.5px;
+  margin-left: 10px;
+  border: none;
+  padding: 10px;
+  width: 180px;
+  background: #ffebeb;
+}
+#search-custom-container{
+  width: 78%;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+#search-custom-size{
+  position: absolute;
+  left: 0;
+  margin-right: 10px;
+}

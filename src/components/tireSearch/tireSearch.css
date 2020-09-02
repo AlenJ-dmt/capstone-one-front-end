@@ -1,0 +1,12 @@
+.tire-drop-down{
+    border-radius: 22.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    padding: 10px;
+    width: 88px;
+    background: #FFEBEB;
+}
+#search-conatainer{
+    display: inline;
+}
