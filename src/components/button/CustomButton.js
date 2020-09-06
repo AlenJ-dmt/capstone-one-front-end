@@ -6,11 +6,9 @@ const CustomButton = (props) => {
     <>
       <button onClick={() => props.onClickDo()}
         style={{
-          "backgroundColor": `${
-            props.buttonType === "Search" ? "#FFEBEB" : "#F2F6FF"
-          }`,
+          "backgroundColor": props.color
         }}
-        id="custom-button"
+        className="custom-button"
       >
         {props.children}
       </button>

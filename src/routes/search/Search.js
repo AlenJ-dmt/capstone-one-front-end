@@ -3,13 +3,16 @@ import "./search.css";
 import CustomButton from "../../components/button/CustomButton";
 import TireSearch from "../../components/tireSearch/TireSearch";
 import OemWheelSearch from "../../components/wheelSearch/OemWheelSearch";
-import CustomWheelSearch from '../../components/wheelSearch/CustomWheelSearch'
+import CustomWheelSearch from "../../components/wheelSearch/CustomWheelSearch";
+import colors from "../../constants/colors";
 
 class Search extends React.Component {
   state = {
     searchType: "",
     toggleButtonOptions: ["", ""],
     toggleState: "left",
+    tiresButton: colors.searchRed,
+    wheelButton: colors.searchRed,
   };
 
   selectSearchtype = (
@@ -19,7 +22,11 @@ class Search extends React.Component {
   ) => {
     this.setState({
       searchType: mySearchType,
-      toggleButtonOptions: [myToggleOptionLeft, myToggleOptionRight]
+      toggleButtonOptions: [myToggleOptionLeft, myToggleOptionRight],
+      tiresButton:
+        mySearchType === "Tires" ? colors.selectedRed : colors.searchRed,
+      wheelButton:
+        mySearchType === "Wheels" ? colors.selectedRed : colors.searchRed,
     });
   };
 
@@ -50,20 +57,22 @@ class Search extends React.Component {
         <div id="button-container">
           <CustomButton
             onClickDo={() => this.selectSearchtype("Tires", "Used", "New")}
-            buttonType={"Search"}
+            color={this.state.tiresButton}
           >
             Tires
           </CustomButton>
           <CustomButton
             onClickDo={() => this.selectSearchtype("Wheels", "OEM", "Custom")}
-            buttonType={"Search"}
+            color={this.state.wheelButton}
           >
             Wheels
           </CustomButton>
         </div>
         {this.state.searchType === "Tires" && <TireSearch />}
-        {(this.state.searchType === "Wheels" && this.state.toggleState === 'left') && <OemWheelSearch />}
-        {(this.state.searchType === "Wheels" && this.state.toggleState === 'right') && <CustomWheelSearch />}
+        {this.state.searchType === "Wheels" &&
+          this.state.toggleState === "left" && <OemWheelSearch />}
+        {this.state.searchType === "Wheels" &&
+          this.state.toggleState === "right" && <CustomWheelSearch />}
         <button id="search-button">Search</button>
       </section>
     );
