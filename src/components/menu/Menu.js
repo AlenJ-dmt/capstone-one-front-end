@@ -5,7 +5,7 @@ import "./nav.css";
 const Menu = () => {
   return (
     <nav id="menu">
-      <Link onClick className="link" to="/search">
+      <Link  className="link" to="/search">
         <i className="material-icons">search</i>
         <span>Search</span>
       </Link>
