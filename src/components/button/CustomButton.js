@@ -4,10 +4,9 @@ import "./button.css";
 const CustomButton = (props) => {
   return (
     <>
-      <button onClick={() => props.onClickDo()}
-        style={{
-          "backgroundColor": props.color
-        }}
+      <button
+        onClick={() => props.onClickDo()}
+        style={{ ...props.styles, backgroundColor: props.color }}
         className="custom-button"
       >
         {props.children}

@@ -1,0 +1,11 @@
+.drop-down-component{
+    border-radius: 22.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    padding: 10px;
+}
+.drop-down-label{
+    position: absolute;
+    left: 0px;
+    }

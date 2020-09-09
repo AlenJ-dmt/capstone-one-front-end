@@ -1,11 +1,32 @@
-.custom-button{
+.custom-button {
+    position: relative;
     border-radius: 22.5px;
-    margin-left: 10px;
-    margin-right: 10px;
     border: none;
     padding: 20px;
-    width: 146px;
-}
-.custom-button:focus{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .custom-button:focus {
     outline: none;
-}
+  }
+  .custom-button::after {
+    content: "";
+    background: rgb(214, 214, 214);
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+  .custom-button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+  }
