@@ -1,55 +1,58 @@
 import React from "react";
-import "./addTire.css";
-import CustomButton from "../button/CustomButton";
-import DropDown from "../dropDown/DropDown";
+import DropDown from "../../components/dropDown/DropDown";
 import colors from "../../constants/colors";
+import CustomButton from "../../components/button/CustomButton";
+import "./addOemWheel.css";
 
-const AddTire = (props) => {
+const AddCustomWheel = () => {
   return (
     <>
-      <form id="add-tire-form">
-        <div style={{position: 'relative'}}>
+      <form id="oem-wheel-form">
+        <div style={{ position: "relative" }}>
           <DropDown
             name={"brand"}
             data={[]}
             color={colors.postBlue}
-            style={{ width: 230, right: 0, position: 'absolute' }}
+            style={{ width: 230, right: 0, position: "absolute" }}
             label={true}
           />
-          <br />  <br />
-          <DropDown
-            name={"model"}
-            data={[]}
-            color={colors.postBlue}
-            style={{ width: 230,  right: 0, position: 'absolute' }}
-            label={true}
-          />
-          <br />  <br />
+          <br /> <br />
           <DropDown
             name={"size"}
             data={[]}
             color={colors.postBlue}
-            style={{ width: 70,  right: 160, position: 'absolute' }}
+            style={{ width: 100, right: 130, position: "absolute" }}
             label={true}
           />
           <DropDown
-            name={"tire-size-one"}
+            name={"sizeTwo"}
             data={[]}
             color={colors.postBlue}
-            style={{ width: 70 ,  right: 80, position: 'absolute'}}
+            style={{ width: 100, right: 0, position: "absolute" }}
+            label={false}
           />
+          <br /> <br />
           <DropDown
-            name={"tire-size-two"}
+            name={"bolt pattern"}
             data={[]}
             color={colors.postBlue}
-            style={{ width: 70,  right: 0, position: 'absolute' }}
+            style={{ width: 180, right: 0, position: "absolute" }}
+            label={true}
           />
-          <br />  <br />
+          <br /> <br />
+          <DropDown
+            name={"offset"}
+            data={[]}
+            color={colors.postBlue}
+            style={{ width: 100, right: 0, position: "absolute" }}
+            label={true}
+          />
+          <br /> <br />
           <DropDown
             name={"quantity"}
             data={[]}
             color={colors.postBlue}
-            style={{ width: 50, position: 'absolute', left: 60 }}
+            style={{ width: 100, right: 0, position: "absolute" }}
             label={true}
           />
         </div>
@@ -65,4 +68,4 @@ const AddTire = (props) => {
   );
 };
 
-export default AddTire;
+export default AddCustomWheel;
