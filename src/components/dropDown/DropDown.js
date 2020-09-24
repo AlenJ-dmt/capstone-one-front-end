@@ -26,6 +26,7 @@ const DropDown = (props) => {
         className="drop-down-component"
         name={props.name}
         style={{ ...props.style, backgroundColor: props.color }}
+        onChange={props.onChangeDo}
       >
         {populateSelect(props.data)}
       </select>

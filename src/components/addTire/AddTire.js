@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./addTire.css";
 import CustomButton from "../button/CustomButton";
 import DropDown from "../dropDown/DropDown";
 import colors from "../../constants/colors";
+import TireContext from '../../context/tireContexts' 
+import TiresApiService from "../../services/tires-api-service";
 
 const AddTire = (props) => {
+
+  const context =  useContext(TireContext)
+
+
   return (
     <>
       <form id="add-tire-form">

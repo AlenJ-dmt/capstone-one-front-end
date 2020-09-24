@@ -4,10 +4,16 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import { TireProvider } from "./context/tireContexts";
+import { WheelProvider } from "./context/wheelContext";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <WheelProvider>
+      <TireProvider>
+        <App />
+      </TireProvider>
+    </WheelProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
