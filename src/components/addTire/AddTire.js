@@ -17,43 +17,43 @@ const AddTire = (props) => {
         <div style={{position: 'relative'}}>
           <DropDown
             name={"brand"}
-            data={[]}
+            data={context.brands}
             color={colors.postBlue}
             style={{ width: 230, right: 0, position: 'absolute' }}
             label={true}
           />
           <br />  <br />
-          <DropDown
+          {/* <DropDown
             name={"model"}
             data={[]}
             color={colors.postBlue}
             style={{ width: 230,  right: 0, position: 'absolute' }}
             label={true}
           />
-          <br />  <br />
+          <br />  <br /> */}
           <DropDown
             name={"size"}
-            data={[]}
+            data={context.width}
             color={colors.postBlue}
             style={{ width: 70,  right: 160, position: 'absolute' }}
             label={true}
           />
           <DropDown
             name={"tire-size-one"}
-            data={[]}
+            data={context.ratio}
             color={colors.postBlue}
             style={{ width: 70 ,  right: 80, position: 'absolute'}}
           />
           <DropDown
             name={"tire-size-two"}
-            data={[]}
+            data={context.diameter}
             color={colors.postBlue}
             style={{ width: 70,  right: 0, position: 'absolute' }}
           />
           <br />  <br />
           <DropDown
             name={"quantity"}
-            data={[]}
+            data={context.quantity}
             color={colors.postBlue}
             style={{ width: 50, position: 'absolute', left: 60 }}
             label={true}

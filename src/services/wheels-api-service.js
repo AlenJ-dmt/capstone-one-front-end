@@ -1,8 +1,8 @@
 import config from '../config'
 
 const WheelsApiService ={ 
-    getOemWheelParameters () {
-        return fetch(`${config.API_ENDPOINT}/oemWheels?mode=search`)
+    getWheelParameters () {
+        return fetch(`${config.API_ENDPOINT}/wheels`)
         .then((res) => res.json())
     }
 }

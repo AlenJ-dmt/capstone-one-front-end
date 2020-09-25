@@ -1,37 +1,44 @@
-import React from "react";
+import React, { useContext, useEffect} from "react";
 import "./customWheelSearch.css";
 import CustomButton from '../button/CustomButton'
 import colors from '../../constants/colors'
+import DropDown from '../dropDown/DropDown'
+import WheelContext from "../../context/wheelContext";
+import WheelsApiService from "../../services/wheels-api-service";
 
-const CustomWheelSearch = (propr) => {
+const CustomWheelSearch = (props) => {
+
+  const context = useContext(WheelContext);
+  
   return (
     <>
       <form>
         <div id="search-custom-container">
           <p>Search: </p>
-          <label id="search-custom-size" htmlFor="Size">
-            Size:{" "}
-          </label>
-          <div style={{ position: "absolute", right: 0 }}>
-            <select
-              className="custom-rim-drop-down"
-              name="rim-diameter"
-            ></select>
-            <select className="custom-rim-drop-down" name="rim-width"></select>
+          <div style={{ position: "absolute", right: 0, width: '100%' }}>
+          <DropDown
+            name={"size"}
+            data={context.wheelDiameter}
+            color={colors.searchRed}
+            style={{  width: 100, right: 115, position: 'absolute' }}
+            label={true}
+          />
+          <DropDown
+            name={"size"}
+            data={context.wheelWidth}
+            color={colors.searchRed}
+            style={{  width: 100, right: 0, position: 'absolute'  }}
+          />
           </div>
           <br />
           <br />
-          <label
-            htmlFor="bolt-pattern"
-            style={{ position: "absolute", left: 0 }}
-          >
-            Bolt Pattern:{" "}
-          </label>
-          <select
-            style={{ position: "absolute", right: 0 }}
-            className="bolt-pattern"
-            name="bolt-patter"
-          ></select>
+          <DropDown
+            name={"bolt pattern"}
+            data={context.boltPatter}
+            color={colors.searchRed}
+            style={{  width: 115, right: 0, position: 'absolute'  }}
+            label={true}
+          />
         </div>
       </form>
       <CustomButton

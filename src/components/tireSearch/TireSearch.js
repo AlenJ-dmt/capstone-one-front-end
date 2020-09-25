@@ -10,16 +10,6 @@ import TiresApiService from "../../services/tires-api-service";
 const TireSearch = (props) => {
   const context = useContext(TireContext);
 
-  useEffect(() => {
-    TiresApiService.getTiresSize().then((jsonResponse) =>
-      context.setTireSizeOptions(
-        jsonResponse.width,
-        jsonResponse.ratio,
-        jsonResponse.diameter
-      )
-    )
-  }, []);
-
   return (
     <>
       <form>

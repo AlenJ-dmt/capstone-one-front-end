@@ -8,16 +8,12 @@ import WheelsApiService from "../../services/wheels-api-service";
 
 const WheelSearch = (props) => {
   const context = useContext(WheelContext);
-  const [models, setModels] = useState([])
-  useEffect(() => {
-    WheelsApiService.getOemWheelParameters().then((jsonResponse) =>
-      context.setOemWheelSearchParameters(
-        jsonResponse.carMakes,
-        jsonResponse.carModels,
-        jsonResponse.years
-      )
-    );
-  }, []);
+  const [idx, setIdx] = useState(0)
+  
+
+  const makeFunction = (ev) => {
+    setIdx( context.carMake.indexOf((ev.target.value).toString()) )
+  }
   
   
   return (
@@ -31,12 +27,13 @@ const WheelSearch = (props) => {
             color={colors.searchRed}
             style={{ width: 200, position: "absolute", right: 0 }}
             label={true}
+            onChangeDo={(ev) => makeFunction(ev) }
           />
           <br></br>
           <br></br>
           <DropDown
             name={"model"}
-            data={context.carModel}
+            data={context.carModel[idx] || []}
             color={colors.searchRed}
             style={{  width: 200, position: "absolute", right: 0  }}
             label={true}

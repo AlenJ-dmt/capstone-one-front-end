@@ -1,8 +1,8 @@
 import config from "../config";
 
 const TiresApiService = {
-  getTiresSize() {
-    return fetch(`${config.API_ENDPOINT}/tires?mode=search`)
+  getTireParameters() {
+    return fetch(`${config.API_ENDPOINT}/tires`)
       .then((res) => res.json())
   },
 };
