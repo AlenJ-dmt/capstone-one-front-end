@@ -51,7 +51,11 @@ class Search extends React.Component {
           wheelsColor={this.state.wheelsColor}
           selectType={this.selectSearchtype}
         />
-        {this.state.searchType === "Tires" && <TireSearch />}
+        {this.state.searchType === "Tires" && (
+          <TireSearch
+            condition={this.state.toggleState === "left" ? "used" : "new"}
+          />
+        )}
         {this.state.searchType === "Wheels" &&
           this.state.toggleState === "left" && <OemWheelSearch />}
         {this.state.searchType === "Wheels" &&

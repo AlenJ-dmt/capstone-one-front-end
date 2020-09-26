@@ -1,0 +1,14 @@
+#result-block-container{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.span-result{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    margin-top: 8px;
+}

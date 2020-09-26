@@ -1,5 +1,5 @@
 import React from "react";
-import ResultBlock from "../../components/resultBlock/ResultBlock";
+import ItemBlock from "../../components/ItemBlock/ItemBlock";
 import './results.css'
 
 class Results extends React.Component {
@@ -8,7 +8,7 @@ class Results extends React.Component {
       <div id='results-page'>
         <h1>Results for: </h1>
         <p>Used Tires 225 55 18</p>
-        <ResultBlock />
+        <ItemBlock />
       </div>
     );
   }

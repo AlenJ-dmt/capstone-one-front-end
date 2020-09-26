@@ -3,6 +3,8 @@ import "./App.css";
 import Search from "./routes/search/Search";
 import Results from "./routes/results/Results";
 import Post from "./routes/post/Post";
+import Inventory from "./routes/inventory/Inventory";
+
 import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/Menu";
 import TireContext from "../src/context/tireContexts";
@@ -39,21 +41,22 @@ function App() {
     );
   };
 
-  useEffect (() => {
-    setWheelAndTireParameters()
-  }, [])
+  useEffect(() => {
+    setWheelAndTireParameters();
+  }, []);
 
   return (
     <>
       <Switch>
-        <Route path="/search">
-          <Search />
-        </Route>
+        <Route path="/search" render={(props) => <Search {...props} />} />
         <Route path="/results">
           <Results />
         </Route>
         <Route path="/post">
           <Post />
+        </Route>
+        <Route path="/inventory">
+          <Inventory />
         </Route>
       </Switch>
       <Menu />

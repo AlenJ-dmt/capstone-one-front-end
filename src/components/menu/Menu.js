@@ -26,6 +26,15 @@ const Menu = () => {
         <i className="material-icons">add</i>
         <span>Add</span>
       </Link>
+      <Link
+        onClick={() => setActive("inventory-link")}
+        id="inventory-link"
+        className={active === "inventory-link" ? "link active-link" : "link"}
+        to="/inventory"
+      >
+        <i class="material-icons">dashboard</i>
+        <span>Inventory</span>
+      </Link>
     </nav>
   );
 };
