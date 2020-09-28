@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import "./App.css";
+import Home from "./routes/home/Home";
 import Search from "./routes/search/Search";
 import Results from "./routes/results/Results";
 import Post from "./routes/post/Post";
 import Inventory from "./routes/inventory/Inventory";
+import ItemDetails from "./routes/itemDetails/ItemDetails";
 
 import { Route, Switch } from "react-router-dom";
 import Menu from "./components/menu/Menu";
@@ -39,6 +41,10 @@ function App() {
         wheels.quantity
       )
     );
+
+    TiresApiService.getAllTires().then((tires) =>
+      tireContext.setTireList(tires)
+    );
   };
 
   useEffect(() => {
@@ -48,14 +54,20 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path="/search" render={(props) => <Search {...props} />} />
-        <Route path="/results">
+        <Route exact path="/" render={() => <Home />} />
+        <Route exact path="/search" render={(props) => <Search {...props} />} />
+        <Route
+          exact
+          path="/tires/:tireId"
+          render={(props) => <ItemDetails />}
+        />
+        <Route exact path="/results">
           <Results />
         </Route>
-        <Route path="/post">
+        <Route exact path="/post">
           <Post />
         </Route>
-        <Route path="/inventory">
+        <Route exact path="/inventory">
           <Inventory />
         </Route>
       </Switch>

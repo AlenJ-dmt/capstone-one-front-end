@@ -7,8 +7,10 @@ const TireContext = React.createContext({
   brands: [],
   quantity: [],
   tiresResults: [],
+  tireList: [],
   setTireOptions: () => {},
-  setTireResults: () => {}
+  setTireResults: () => {},
+  setTireList: () => {}
 });
 
 export default TireContext;
@@ -20,7 +22,8 @@ export class TireProvider extends React.Component {
     diameter: [],
     brands: [],
     quantity: [],
-    tiresResults: []
+    tiresResults: [],
+    tireList: []
   };
 
   setTireOptions = (tireWidth, tireRatio, tireDiameter, tireBrands, tireQuantity) => {
@@ -32,6 +35,12 @@ export class TireProvider extends React.Component {
       quantity: tireQuantity
     });
   };
+
+  setTireList = (tires) => {
+    this.setState({
+      tireList: tires
+    })
+  }
 
   setTireResults = (tires) =>{
     this.setState({
@@ -45,9 +54,11 @@ export class TireProvider extends React.Component {
       diameter: this.state.diameter,
       brands: this.state.brands,
       quantity: this.state.quantity,
+      tireList: this.state.tireList,
       setTireOptions: this.setTireOptions,
       tiresResults: this.state.tiresResults,
-      setTireResults: this.setTireResults
+      setTireResults: this.setTireResults,
+      setTireList: this.setTireList
     };
     return (
       <TireContext.Provider value={value}>

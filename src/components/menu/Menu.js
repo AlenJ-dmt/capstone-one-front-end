@@ -32,7 +32,7 @@ const Menu = () => {
         className={active === "inventory-link" ? "link active-link" : "link"}
         to="/inventory"
       >
-        <i class="material-icons">dashboard</i>
+        <i className="material-icons">dashboard</i>
         <span>Inventory</span>
       </Link>
     </nav>

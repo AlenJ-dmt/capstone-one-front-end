@@ -1,10 +1,9 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./wheelSearch.css";
 import CustomButton from "../button/CustomButton";
 import colors from "../../constants/colors";
 import DropDown from "../dropDown/DropDown";
 import WheelContext from "../../context/wheelContext";
-import WheelsApiService from "../../services/wheels-api-service";
 
 const WheelSearch = (props) => {
   const context = useContext(WheelContext);

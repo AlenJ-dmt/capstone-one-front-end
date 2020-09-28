@@ -4,6 +4,7 @@
     margin-right: 10px;
     border: none;
     padding: 10px;
+    outline: none;
 }
 .drop-down-label{
     position: absolute;

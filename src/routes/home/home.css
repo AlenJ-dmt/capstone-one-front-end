@@ -1,0 +1,17 @@
+#home-section{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    z-index: 10;
+}
+#card{
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 50px;
+    position: relative;
+}
+#user-input{
+    border: 1px black solid;
+    position: absolute;
+    
+}

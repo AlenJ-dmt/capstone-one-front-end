@@ -3,9 +3,9 @@ import SelectElement from "../../components/SelectElement";
 import colors from "../../constants/colors";
 import "./post.css";
 import ToggleButton from "../../components/toggleButton/toggleButton";
-import AddTire from '../../components/addTire/AddTire'
-import AddOemWheel from '../../components/addWheel/AddOemWheel'
-import AddCustomWheel from '../../components/addWheel/AddCustomWheel'
+import AddTire from "../../components/addTire/AddTire";
+import AddOemWheel from "../../components/addWheel/AddOemWheel";
+import AddCustomWheel from "../../components/addWheel/AddCustomWheel";
 
 class Post extends React.Component {
   state = {
@@ -48,9 +48,15 @@ class Post extends React.Component {
             tiresColor={this.state.tiresColor}
             wheelsColor={this.state.wheelsColor}
           />
-          {this.state.searchType === 'Tires' && (<AddTire />)}
-          {(this.state.searchType === 'Wheels' &&  this.state.toggleState === 'left') && (<AddOemWheel />)}
-          {(this.state.searchType === 'Wheels' &&  this.state.toggleState === 'right') && (<AddCustomWheel />)}
+          {this.state.searchType === "Tires" && (
+            <AddTire
+              condition={this.state.toggleState === "left" ? "used" : "new"}
+            />
+          )}
+          {this.state.searchType === "Wheels" &&
+            this.state.toggleState === "left" && <AddOemWheel />}
+          {this.state.searchType === "Wheels" &&
+            this.state.toggleState === "right" && <AddCustomWheel />}
         </section>
       </>
     );

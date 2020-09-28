@@ -7,7 +7,6 @@ class Results extends React.Component {
     return (
       <div id='results-page'>
         <h1>Results for: </h1>
-        <p>Used Tires 225 55 18</p>
         <ItemBlock />
       </div>
     );

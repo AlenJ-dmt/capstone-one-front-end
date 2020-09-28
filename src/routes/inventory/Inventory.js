@@ -4,7 +4,7 @@ import colors from "../../constants/colors";
 import "./inventory.css";
 import TireContext from "../../context/tireContexts";
 import ItemBlock from "../../components/ItemBlock/ItemBlock";
-import TireService from "../../services/tires-api-service";
+
 
 class Inventory extends React.Component {
   static contextType = TireContext;
@@ -13,22 +13,10 @@ class Inventory extends React.Component {
     itemType: "",
     tiresColor: colors.postBlue,
     wheelsColor: colors.postBlue,
-    tireList: [],
     wheelList: [],
   };
 
-  setTireList = () => {
-    TireService.getAllTires().then((tires) =>
-      this.setState({
-        tireList: tires,
-      })
-    );
-  };
-
   selectType = (selectedItem) => {
-    if (selectedItem == "Tires") {
-      this.setTireList();
-    }
     this.setState({
       itemType: selectedItem,
       tiresColor:
@@ -38,12 +26,14 @@ class Inventory extends React.Component {
     });
   };
 
-  inventoryList = (itemType) => {
-      return this.state.tireList.map((tire) => 
+  inventoryList = () => {
+      return this.context.tireList.map((tire) => 
         <ItemBlock backgroundColor={colors.postBlue}
+        key={tire.id}
         title={tire.brand} 
         size={tire.size}
         quantity={tire.quantity}
+        id={tire.id}
         />
       );
   };
@@ -58,7 +48,7 @@ class Inventory extends React.Component {
             wheelsColor={this.state.wheelsColor}
           />
           
-             { this.state.itemType == 'Tires' && this.inventoryList("Tires") }
+             { this.state.itemType === 'Tires' && this.inventoryList() }
           
         </section>
       </>

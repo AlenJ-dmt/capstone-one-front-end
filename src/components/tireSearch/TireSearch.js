@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import Tires from "../../tireStore";
+import React, { useContext, useState } from "react";
+import { useHistory } from 'react-router-dom'
 import "./tireSearch.css";
 import CustomButton from "../button/CustomButton";
 import colors from "../../constants/colors";
@@ -9,6 +9,7 @@ import TiresApiService from "../../services/tires-api-service";
 
 const TireSearch = (props) => {
   const context = useContext(TireContext);
+  const history = useHistory()
 
   const [width, setWidth] = useState("");
   const [ratio, setRatio] = useState("");
@@ -25,6 +26,7 @@ const TireSearch = (props) => {
       searchTire.size,
       searchTire.condition
     ).then((tires) => context.setTireResults(tires))
+    .then(() => history.push('/results'))
   } 
 
   return (
