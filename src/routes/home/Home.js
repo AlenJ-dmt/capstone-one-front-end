@@ -27,7 +27,7 @@ const Home = (props) => {
           </div>
         </div>
         <CustomButton
-          onClickDo={() => history.push("/search")}
+          onClickDo={() => window.location.replace(window.location.href + 'search')}
           color={colors.postBlue}
           styles={{ marginTop: 20, width: 300 }}
         >

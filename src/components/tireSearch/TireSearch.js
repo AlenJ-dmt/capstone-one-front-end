@@ -21,7 +21,6 @@ const TireSearch = (props) => {
   };
 
   const searchTireBySize = () => {
-    console.log(searchTire)
     TiresApiService.getTiresBySize(
       searchTire.size,
       searchTire.condition

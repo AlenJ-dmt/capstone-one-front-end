@@ -42,7 +42,7 @@ export class TireProvider extends React.Component {
     })
   }
 
-  setTireResults = (tires) =>{
+  setTireResults = (tires) => {
     this.setState({
       tiresResults: tires
     })

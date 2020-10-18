@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./nav.css";
 
 const Menu = () => {
   const [active, setActive] = useState("");
+  const url = useHistory();
 
   return (
-    <nav id="menu">
+    <nav
+      id="menu"
+      style={{ display: url.location.pathname === "/" ? "none" : "flex" }}
+    >
       <Link
         onClick={() => setActive("search-link")}
         id="search-link"
