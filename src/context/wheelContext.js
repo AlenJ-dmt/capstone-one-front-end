@@ -9,7 +9,13 @@ const WheelContext = React.createContext({
   boltPatter: [],
   wheelBrands: [],
   quantity: [],
+  wheelList: [],
+  oemWheelResults: [],
+  customWheelResults: [],
   setWheelParameters: () => {},
+  setWheelList: () => {},
+  setOemWheelResults: () => {},
+  SetCustomResults: () => {},
 });
 
 export default WheelContext;
@@ -24,6 +30,9 @@ export class WheelProvider extends React.Component {
     boltPatter: [],
     wheelBrands: [],
     quantity: [],
+    wheelList: [],
+    oemWheelResults: [],
+    customWheelResults: [],
   };
 
   setWheelParameters = (
@@ -48,6 +57,24 @@ export class WheelProvider extends React.Component {
     });
   };
 
+  setWheelList = (wheels) => {
+    this.setState({
+      wheelList: wheels,
+    });
+  };
+
+  setOemWheelResults = (wheels) => {
+    this.setState({
+      oemWheelResults: wheels,
+    });
+  };
+
+  SetCustomResults = (wheels) => {
+    this.setState({
+      customWheelResults: wheels,
+    });
+  };
+
   render() {
     const value = {
       carMake: this.state.carMake,
@@ -58,7 +85,13 @@ export class WheelProvider extends React.Component {
       boltPatter: this.state.boltPatter,
       wheelBrands: this.state.wheelBrands,
       quantity: this.state.quantity,
-      setWheelParameters: this.setWheelParameters
+      wheelList: this.state.wheelList,
+      oemWheelResults: [],
+      customWheelResults: [],
+      setWheelParameters: this.setWheelParameters,
+      setWheelList: this.setWheelList,
+      setOemWheelResults: this.setOemWheelResults,
+      SetCustomResults: this.SetCustomResults,
     };
 
     return (

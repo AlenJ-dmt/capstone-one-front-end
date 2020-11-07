@@ -4,6 +4,8 @@ import colors from "../../constants/colors";
 import "./inventory.css";
 import TireContext from "../../context/tireContexts";
 import ItemBlock from "../../components/ItemBlock/ItemBlock";
+import TireList from '../../components/TiresList'
+import WheelList from "../../components/WheelList"
 
 
 class Inventory extends React.Component {
@@ -48,7 +50,8 @@ class Inventory extends React.Component {
             wheelsColor={this.state.wheelsColor}
           />
           
-             { this.state.itemType === 'Tires' && this.inventoryList() }
+             { this.state.itemType === 'Tires' && <TireList/> }
+             { this.state.itemType === 'Wheels' && <WheelList/> }
           
         </section>
       </>

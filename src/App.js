@@ -42,6 +42,10 @@ function App() {
       )
     );
 
+    WheelsApiService.getAllWheels().then((wheels) => {
+      wheelContext.setWheelList(wheels);
+    });
+
     TiresApiService.getAllTires().then((tires) =>
       tireContext.setTireList(tires)
     );
