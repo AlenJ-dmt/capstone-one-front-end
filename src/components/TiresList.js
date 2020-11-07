@@ -16,6 +16,7 @@ const TireList = (props) => {
         size={tire.size}
         quantity={tire.quantity}
         id={tire.id}
+        type={'tires'}
       />
     ));
   };

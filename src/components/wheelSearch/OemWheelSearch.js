@@ -16,20 +16,20 @@ const WheelSearch = (props) => {
   const [model, setModel] = useState("");
   const [year, setYear] = useState("");
 
-  const oemWheelSearched = {
-    make,
-    model,
-    year,
+  let oemWheelSearched = {
+    carMake: make,
+    carModel: model,
+    carYear: year,
   };
 
   const searchOemWheel = () => {
     WheelsApiService.searchOemWheel(
-      oemWheelSearched.year,
-      oemWheelSearched.make,
-      oemWheelSearched.model
+      oemWheelSearched.carYear,
+      oemWheelSearched.carMake,
+      oemWheelSearched.carModel
     )
       .then((wheels) => context.setOemWheelResults(wheels))
-      .then(() => history.push("/results"));
+      .then(() => history.push("/oemWheelResults"));
   };
 
   const makeFunction = (ev) => {

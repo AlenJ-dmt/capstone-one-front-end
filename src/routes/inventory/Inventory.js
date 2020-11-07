@@ -28,17 +28,7 @@ class Inventory extends React.Component {
     });
   };
 
-  inventoryList = () => {
-      return this.context.tireList.map((tire) => 
-        <ItemBlock backgroundColor={colors.postBlue}
-        key={tire.id}
-        title={tire.brand} 
-        size={tire.size}
-        quantity={tire.quantity}
-        id={tire.id}
-        />
-      );
-  };
+
   render() {
     return (
       <>

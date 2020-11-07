@@ -11,7 +11,7 @@ const ItemBlock = (props) => {
       <div
         id="result-block-container"
         style={{ backgroundColor: props.backgroundColor }}
-        onClick={() => history.push(`/tires/${props.id}`) }
+        onClick={() => history.push(`/${props.type}/${props.id}`) }
       >
         <span
           className="span-result"

@@ -25,7 +25,7 @@ const TireSearch = (props) => {
       searchTire.size,
       searchTire.condition
     ).then((tires) => context.setTireResults(tires))
-    .then(() => history.push('/results'))
+    .then(() => history.push('/tiresResults'))
   } 
 
   return (

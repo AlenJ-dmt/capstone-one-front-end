@@ -13,6 +13,7 @@ import TireContext from "../src/context/tireContexts";
 import WheelContext from "../src/context/wheelContext";
 import TiresApiService from "../src/services/tires-api-service";
 import WheelsApiService from "../src/services/wheels-api-service";
+import OemWheelDetails from "./routes/itemDetails/OemWheelDetails"
 
 function App() {
   const wheelContext = useContext(WheelContext);
@@ -65,8 +66,24 @@ function App() {
           path="/tires/:tireId"
           render={(props) => <ItemDetails />}
         />
-        <Route exact path="/results">
-          <Results />
+        <Route
+          exact
+          path="/oemWheels/:oemWheelId"
+          render={(props) => <OemWheelDetails />}
+        />
+        <Route
+          exact
+          path="/customWheels/:customWheelId"
+          render={(props) => <ItemDetails />}
+        />
+        <Route exact path="/tiresResults">
+          <Results type='tires' />
+        </Route>
+        <Route exact path="/oemWheelResults">
+          <Results type='oemWheels' />
+        </Route>
+        <Route exact path="/customWheelResults">
+          <Results oem='customWheels' />
         </Route>
         <Route exact path="/post">
           <Post />

@@ -15,6 +15,7 @@ const WheelList = (props) => {
         size={wheel.model}
         quantity={wheel.quantity}
         id={wheel.id}
+        type={'oemWheels'}
       />
     ));
   };
