@@ -8,7 +8,7 @@ const TireDetails = (props) => {
   const itemId = useParams();
 
   const SelectedItem = context.tireList.filter(
-    (tire) => tire.id == itemId.tireId
+    (tire) => String(tire.id) === String(itemId.tireId)
   );
 
   return (

@@ -5,5 +5,8 @@
 #button-container {
   justify-content: space-between;
 }
-
-
+.search-explanation{
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+}

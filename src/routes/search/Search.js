@@ -60,6 +60,15 @@ class Search extends React.Component {
           this.state.toggleState === "left" && <OemWheelSearch />}
         {this.state.searchType === "Wheels" &&
           this.state.toggleState === "right" && <CustomWheelSearch />}
+        {this.state.searchType === "" && (
+          <div className="search-explanation">
+            <p>
+              On this search screen you will be able to look for a specif Item
+              in your inventory. Pick a category, input the parameter your
+              looking for and press search.
+            </p>
+          </div>
+        )}
       </section>
     );
   }

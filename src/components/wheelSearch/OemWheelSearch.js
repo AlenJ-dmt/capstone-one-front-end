@@ -15,12 +15,21 @@ const WheelSearch = (props) => {
   const [make, setMake] = useState("");
   const [model, setModel] = useState("");
   const [year, setYear] = useState("");
+  const [error, setError] = useState(false)
 
   let oemWheelSearched = {
     carMake: make,
     carModel: model,
     carYear: year,
   };
+
+  const validateInput = () =>{
+    if(make === "" || model === "" || year === "" ){
+      setError(true)
+      return
+    }
+    searchOemWheel()
+  }
 
   const searchOemWheel = () => {
     WheelsApiService.searchOemWheel(
@@ -76,11 +85,16 @@ const WheelSearch = (props) => {
       </form>
       <CustomButton
         styles={{ width: "80%", marginTop: 40 }}
-        onClickDo={() => searchOemWheel() }
+        onClickDo={() => validateInput() }
         color={colors.searchRed}
       >
         Search
       </CustomButton>
+      {error && (
+        <div className="oem-search-error">
+          <p>Please select a valid input!</p>
+        </div>
+      )}
     </>
   );
 };

@@ -17,14 +17,11 @@
     
 }
 .login-form{
-    position: absolute;
-    left: 250px;
+    position: relative;
 }
 .description{
-    position: absolute;
-    right: 250px;
     height: 100px;
-    width: 400px;
     text-align: left;
-    padding-top: 130px;
+    width: 80%;
+    margin: 0 auto;
 }

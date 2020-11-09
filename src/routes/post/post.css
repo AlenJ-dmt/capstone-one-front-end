@@ -2,3 +2,8 @@
   text-align: center;
   position: relative;
 }
+.post-explanation{
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+}

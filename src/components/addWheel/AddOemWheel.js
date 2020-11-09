@@ -16,10 +16,28 @@ const AddOemWheel = () => {
   const [wheelDiameter, setWheelDiameter] = useState("");
   const [boltPattern, setBoltPattern] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false)
 
   const makeFunction = (ev) => {
     setIdx(context.carMake.indexOf(ev.target.value.toString()));
     setMake(ev.target.value);
+  };
+
+  const validateInput = () => {
+    if (
+      make === "" ||
+      carYear === "" ||
+      wheelWidth === "" ||
+      wheelDiameter === "" ||
+      boltPattern === "" ||
+      quantity === ""
+    ) {
+      setError(true);
+      setSuccess(false)
+      return;
+    }
+    addNewOemWheel();
   };
 
   const newOemWheel = {
@@ -41,9 +59,13 @@ const AddOemWheel = () => {
       newOemWheel.wheel_diameter,
       newOemWheel.bolt_pattern,
       newOemWheel.quantity
-    ).then((wheels) => {
-      context.setWheelList(wheels);
+    ).then(() => {
+      WheelApiServices.getAllWheels().then((wheels) =>
+        context.setWheelList(wheels)
+      );
     });
+    setError(false)
+    setSuccess(true)
   };
 
   return (
@@ -123,11 +145,21 @@ const AddOemWheel = () => {
       </form>
       <CustomButton
         styles={{ width: "80%", marginTop: 40 }}
-        onClickDo={() => addNewOemWheel()}
+        onClickDo={() => validateInput()}
         color={colors.postBlue}
       >
         Add
       </CustomButton>
+      {error && (
+        <div style={{ color: "red" }}>
+          <p>Please select a value on the missing field(s)!</p>
+        </div>
+      )}
+      {success && (
+        <div style={{ color: "green" }}>
+          <p>Item Created!</p>
+        </div>
+      )}
     </>
   );
 };

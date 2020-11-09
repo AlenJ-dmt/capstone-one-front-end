@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./addTire.css";
+import { useHistory } from "react-router-dom";
 import CustomButton from "../button/CustomButton";
 import DropDown from "../dropDown/DropDown";
 import colors from "../../constants/colors";
@@ -8,17 +9,47 @@ import TireApiService from "../../services/tires-api-service";
 
 const AddTire = (props) => {
   const context = useContext(TireContext);
+  const history = useHistory();
 
   const [brand, setBrand] = useState("");
   const [width, setWidth] = useState("");
   const [ratio, setRatio] = useState("");
   const [diameter, setDiameter] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const validateInput = () => {
+    if (
+      brand === "" ||
+      width === "" ||
+      ratio === "" ||
+      diameter === "" ||
+      quantity === ""
+    ) {
+      setSuccess(false)
+      setError(true);
+      return;
+    }
+    createNewTire();
+  };
 
   const createNewTire = () => {
-    TireApiService.addNewTire(brand, `${width}${ratio}${diameter}`, quantity, props.condition).then(() =>
+    TireApiService.addNewTire(
+      brand,
+      `${width}${ratio}${diameter}`,
+      quantity,
+      props.condition
+    ).then(() =>
       TireApiService.getAllTires().then((tires) => context.setTireList(tires))
     );
+    setError(false);
+    setBrand("");
+    setDiameter("");
+    setQuantity("");
+    setWidth("");
+    setRatio("");
+    setSuccess(true);
   };
 
   return (
@@ -69,7 +100,7 @@ const AddTire = (props) => {
             name={"quantity"}
             data={context.quantity}
             color={colors.postBlue}
-            style={{ width: 50, position: "absolute", left: 60 }}
+            style={{ width: 60, position: "absolute", left: 60 }}
             label={true}
             onChangeDo={(ev) => setQuantity(ev.target.value)}
           />
@@ -77,11 +108,21 @@ const AddTire = (props) => {
       </form>
       <CustomButton
         styles={{ width: "80%", marginTop: 40 }}
-        onClickDo={() => createNewTire()}
+        onClickDo={() => validateInput()}
         color={colors.postBlue}
       >
         Add
       </CustomButton>
+      {error && (
+        <div style={{ color: "red" }}>
+          <p>Please select a value on the missing field(s)!</p>
+        </div>
+      )}
+      {success && (
+        <div style={{ color: "green" }}>
+          <p>Item Created!</p>
+        </div>
+      )}
     </>
   );
 };

@@ -1,12 +1,10 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import logo from "../../images/logo.png";
 import "./home.css";
 import colors from "../../constants/colors";
 import CustomButton from "../../components/button/CustomButton";
 
 const Home = (props) => {
-  const history = useHistory();
   return (
     <>
       <section id="home-section">

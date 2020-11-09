@@ -7,7 +7,7 @@ const OemWheelDetails = (props) => {
   const itemId = useParams();
 
   const SelectedItem = context.wheelList.filter(
-    (wheel) => wheel.id == itemId.oemWheelId
+    (wheel) => String(wheel.id) === String(itemId.oemWheelId)
   );
 
   return (

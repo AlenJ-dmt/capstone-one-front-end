@@ -14,3 +14,6 @@
     position: relative;
     margin: 0 auto;
 }
+.oem-search-error{
+    color: red;
+}

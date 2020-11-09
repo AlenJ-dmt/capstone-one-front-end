@@ -3,7 +3,6 @@ import SelectElement from "../../components/SelectElement";
 import colors from "../../constants/colors";
 import "./inventory.css";
 import TireContext from "../../context/tireContexts";
-import ItemBlock from "../../components/ItemBlock/ItemBlock";
 import TireList from '../../components/TiresList'
 import WheelList from "../../components/WheelList"
 
