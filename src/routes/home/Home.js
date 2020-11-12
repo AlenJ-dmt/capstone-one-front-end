@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/logo.png";
 import "./home.css";
 import colors from "../../constants/colors";
 import CustomButton from "../../components/button/CustomButton";
 
 const Home = (props) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+
+  const checkCredentials = () => {
+    if (username !== "userOne" || password !== "Password") {
+      setError(true);
+      return
+    }
+    window.location.replace(window.location.href + "search");
+    setError(false);
+  };
+
+
   return (
     <>
       <section id="home-section">
@@ -16,24 +30,32 @@ const Home = (props) => {
           >
             <div style={{ position: "absolute", bottom: 80 }}>
               <p>Sign In</p>
-              <input className="user-input" placeholder="email" />
+              <input
+                className="user-input"
+                placeholder="email"
+                onChange={(ev) => setUsername(ev.target.value)}
+              />
               <input
                 type="password"
                 style={{ marginTop: 20 }}
                 className="user-input"
                 placeholder="password"
+                onChange={(ev) => setPassword(ev.target.value)}
               />
             </div>
           </div>
           <CustomButton
-            onClickDo={() =>
-              window.location.replace(window.location.href + "search")
-            }
+            onClickDo={() => checkCredentials()}
             color={colors.postBlue}
             styles={{ marginTop: 20, width: 300 }}
           >
             Continue
           </CustomButton>
+          {error && (
+            <div style={{ fontSize: 15, color: "red" }}>
+              <p>Invalid name or password!</p>
+            </div>
+          )}
         </div>
         <div className="description">
           <h1>About Redline</h1>
