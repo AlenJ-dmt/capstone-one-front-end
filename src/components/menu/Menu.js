@@ -10,36 +10,36 @@ const Menu = () => {
   return (
     <nav
       id="menu"
-      style={{ display: url.location.pathname === "/" ? "none" : "flex" }}
+      style={{  display: "flex" || url.location.pathname === "/" ? "none" : "flex"  }}
     >
-      <Link
+      <a
         onClick={() => setActive("search-link")}
         id="search-link"
         className={active === "search-link" ? "link active-link" : "link"}
-        to="/search"
+        href="/search"
       >
         <i className="material-icons">search</i>
         <span>Search</span>
-      </Link>
+      </a>
 
-      <Link
+      <a
         onClick={() => setActive("add-link")}
         id="add-link"
         className={active === "add-link" ? "link active-link" : "link"}
-        to="/post"
+        href="/post"
       >
         <i className="material-icons">add</i>
         <span>Add</span>
-      </Link>
-      <Link
+      </a>
+      <a
         onClick={() => setActive("inventory-link")}
         id="inventory-link"
         className={active === "inventory-link" ? "link active-link" : "link"}
-        to="/inventory"
+        href="/inventory"
       >
         <i className="material-icons">dashboard</i>
         <span>Inventory</span>
-      </Link>
+      </a>
     </nav>
   );
 };

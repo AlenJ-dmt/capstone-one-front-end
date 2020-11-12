@@ -14,10 +14,19 @@ const OemWheelDetails = (props) => {
     <>
       <section id="detail-section">
         <h1>Details</h1>
-        <h2>Make: {SelectedItem[0].make || ""}</h2>
-        <h2>Model: {SelectedItem[0].model || ""}</h2>
-        <h2>Year: {SelectedItem[0].carYear || ""} </h2>
-        <h2>Quanitty: {SelectedItem[0].quantity || ""}</h2>
+        <h2>
+          Make: {SelectedItem[0] === undefined ? "" : SelectedItem[0].make}
+        </h2>
+        <h2>
+          Model: {SelectedItem[0] === undefined ? "" : SelectedItem[0].model}
+        </h2>
+        <h2>
+          Year: {SelectedItem[0] === undefined ? "" : SelectedItem[0].carYear}{" "}
+        </h2>
+        <h2>
+          Quanitty:{" "}
+          {SelectedItem[0] === undefined ? "" : SelectedItem[0].quantity}
+        </h2>
       </section>
     </>
   );

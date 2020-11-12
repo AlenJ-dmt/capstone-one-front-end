@@ -16,4 +16,8 @@ const ToggleButton = (props) => {
   );
 };
 
+ToggleButton.defaultProps = {
+  toggleButtonOptions: ['right', 'left']
+}
+
 export default ToggleButton;

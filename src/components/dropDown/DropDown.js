@@ -34,4 +34,8 @@ const DropDown = (props) => {
   );
 };
 
+DropDown.defaultProps ={
+  data: []
+}
+
 export default DropDown;
