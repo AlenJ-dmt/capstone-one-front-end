@@ -10,7 +10,7 @@ const Home = (props) => {
   const [error, setError] = useState(false);
 
   const checkCredentials = () => {
-    if (username !== "userOne" || password !== "Password") {
+    if (username !== "userOne" || password !== "password") {
       setError(true);
       return
     }
