@@ -9,5 +9,11 @@ Link to live demo : https://redline.vercel.app/
 
 API: 'https://mighty-oasis-55773.herokuapp.com'
 
+SnapShots: 
 
-<img src='./src/images/1.png' height=100 >
+<img src='./src/images/1.PNG' height=150 > <img src='./src/images/2.PNG' height=150 >
+<img src='./src/images/2.PNG' height=150 >
+<img src='./src/images/3.PNG' height=150 >
+<img src='./src/images/4.PNG' height=150 >
+<img src='./src/images/5.PNG' height=150 >
+<img src='./src/images/6.PNG' height=150 >
