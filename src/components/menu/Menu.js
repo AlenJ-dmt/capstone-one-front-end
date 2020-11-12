@@ -10,7 +10,7 @@ const Menu = () => {
   return (
     <nav
       id="menu"
-      style={{  display: url.location.pathname === "/" ? "none" : "flex"  }}
+      style={{  display: url === undefined ? 'none' : url.location.pathname === "/" ? "none" : "flex"  }}
     >
       <a
         onClick={() => setActive("search-link")}
