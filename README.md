@@ -1,4 +1,4 @@
-#### Redline Inventory 
+<img src='./src/images/logo.png' height=100 >
 
 This app will allow tire & wheel shop owners a more efficient way to keep up with what they have in stock.
 A very modern and user-friendly interface with a powerful and organized storage system. I created this app
@@ -9,4 +9,5 @@ Link to live demo : https://redline.vercel.app/
 
 API: 'https://mighty-oasis-55773.herokuapp.com'
 
-![image] (images/1.PNG)
+
+<img src='./src/images/1.png' height=100 >
