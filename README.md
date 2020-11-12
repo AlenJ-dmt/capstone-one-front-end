@@ -9,4 +9,4 @@ Link to live demo : https://redline.vercel.app/
 
 API: 'https://mighty-oasis-55773.herokuapp.com'
 
-![image] ("/images/1.PNG")
+![image] (images/1.PNG)

@@ -57,14 +57,15 @@ class Post extends React.Component {
             this.state.toggleState === "left" && <AddOemWheel />}
           {this.state.searchType === "Wheels" &&
             this.state.toggleState === "right" && <AddCustomWheel />}
-            {this.state.searchType === "" && (
-          <div className="post-explanation">
-            <p>
-              On this Post screen you will be able to add new items to your inventory. 
-              Pick a category, input the parameter for your new item and press add.
-            </p>
-          </div>
-        )}
+          {this.state.searchType === "" && (
+            <div className="post-explanation">
+              <p>
+                On this Post screen, you will be able to add new items to your
+                inventory. Pick a category, input the parameter for your new
+                item and press add.
+              </p>
+            </div>
+          )}
         </section>
       </>
     );
