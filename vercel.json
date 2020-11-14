@@ -2,12 +2,20 @@
     "version": 2,
     "routes": [
       {
-        "src": "^/static/(.*)",
-        "dest": "/static/$1"
+       "src": "^/static/(.*)",
+       "dest": "/static/$1"
       },
       {
-        "src": ".*",
-        "dest": "/index.html"
+       "src": "^/favicon.ico$",
+       "dest": "/favicon.ico"
+      },
+      {
+       "src": "^/manifest.json$",
+       "dest": "/manifest.json"
+      },
+      {
+       "src": ".*",
+       "dest": "/index.html"
       }
-    ]
+     ]
   }
