@@ -51,6 +51,8 @@ const Home = (props) => {
           >
             Continue
           </CustomButton>
+          <p> Demo User: userOne Password: password</p>
+          
           {error && (
             <div style={{ fontSize: 15, color: "red" }}>
               <p>Invalid name or password!</p>
