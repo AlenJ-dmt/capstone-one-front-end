@@ -90,6 +90,7 @@ const WheelSearch = (props) => {
       >
         Search
       </CustomButton>
+      <p>Demo: look for Audi A4 2000</p>
       {error && (
         <div className="oem-search-error">
           <p>Please select a valid input!</p>

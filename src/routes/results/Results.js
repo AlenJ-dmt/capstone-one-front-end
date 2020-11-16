@@ -11,6 +11,11 @@ const Results = props => {
   const wheelContext = useContext(WheelContext)
 
   const tireList = () => {
+
+    if(tireContext.tiresResults.length < 1){
+     return <h4 style={{color: 'red'}}>Opps! we did not find any results that match your criteria</h4>
+    }
+
     return tireContext.tiresResults.map((tire) => (
       <ItemBlock
         backgroundColor={colors.searchRed}
@@ -25,6 +30,10 @@ const Results = props => {
   };
 
   const oemWheelList = () => {
+
+    if(wheelContext.oemWheelResults.length < 1){
+      return <h4 style={{color: 'red'}}>Opps! we did not find any results that match your criteria</h4>
+     }
     return wheelContext.oemWheelResults.map((wheel) => (
       <ItemBlock
         backgroundColor={colors.searchRed}

@@ -21,13 +21,13 @@ const TireSearch = (props) => {
     condition: props.condition,
   };
 
-  const validateInput = () =>{
-    if(width === "" || ratio === "" || diameter === ""){
-      setError(true)
-      return
+  const validateInput = () => {
+    if (width === "" || ratio === "" || diameter === "") {
+      setError(true);
+      return;
     }
-    searchTireBySize()
-  }
+    searchTireBySize();
+  };
 
   const searchTireBySize = () => {
     TiresApiService.getTiresBySize(searchTire.size, searchTire.condition)
@@ -71,6 +71,7 @@ const TireSearch = (props) => {
       >
         Search
       </CustomButton>
+      <p>Demo: look for 205 55 16</p>
       {error && (
         <div className="search-tire-error">
           <p>Please select a valid input!</p>
