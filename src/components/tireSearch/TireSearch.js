@@ -39,7 +39,7 @@ const TireSearch = (props) => {
     <>
       <form>
         <div id="search-conatainer">
-          <p>Search</p>
+          <p>Search by tire size:</p>
 
           <DropDown
             name={"section-width"}

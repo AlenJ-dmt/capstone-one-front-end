@@ -22,7 +22,7 @@ const TireDetails = (props) => {
           Size: {SelectedItem[0] === undefined ? "" : SelectedItem[0].size}
         </h2>
         <h2>
-          Quanitty:{" "}
+          Quantity:{" "}
           {SelectedItem[0] === undefined ? "" : SelectedItem[0].quantity}
         </h2>
         <h2>

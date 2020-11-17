@@ -63,7 +63,7 @@ class Search extends React.Component {
         {this.state.searchType === "" && (
           <div className="search-explanation">
             <p>
-              On this search screen, you will be able to look for a specif Item
+              On this search screen, you will be able to look for a specific Item
               in your inventory. Pick a category, input the parameter you’re
               looking for, and press search.
             </p>
